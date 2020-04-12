@@ -15,27 +15,24 @@ class LinkList2App
    public static void main(String[] args)
       {
       LinkList theList = new LinkList();  // make list
+       // theList.insertFirst(10);
+        theList.insertLast(55);
+     // theList.displayList();              // display list
 
-      theList.insertFirst(22);      // insert 4 items
-      theList.insertFirst(44);
-      theList.insertFirst(66);
-      theList.insertFirst(88);
-
-      theList.displayList();              // display list
-
-      Node f = theList.find(88);          // find item
+    Node f = theList.find(88);          // find item
       if( f != null)
-         System.out.println("Found link with key " + f.iData);
+         System.out.println("Found link with key " + f.getIdate());
       else
          System.out.println("Can't find link");
 
       Node d = theList.delete(66);        // delete item
       if( d != null )
-         System.out.println("Deleted link with key " + d.iData);
+         System.out.println("Deleted link with key " + d.getIdate());
       else
         System.out.println("Can't delete link");
+      theList.displayList();
 
-      theList.displayList();              // display list
+   /*   theList.displayList();              // display list
       theList.deleteLast();
       theList.displayList();
       theList.deleteFirst();
@@ -43,7 +40,7 @@ class LinkList2App
       theList.insertLast(33);
       theList.displayList();
        theList.insertLast(80);
-      theList.displayList();
-      }  // end main()
+      theList.displayList();*/
+      }  // end
    }  // end class LinkList2App
 ////////////////////////////////////////////////////////////////

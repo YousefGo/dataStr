@@ -11,7 +11,7 @@ import java.util.Arrays;
 class HighArrayApp {
 
     public static void main(String[] args) throws FileNotFoundException {
-        int maxSize = 100;            // array size
+        int maxSize = 10;            // array size
         HighArray arr;                // reference to array
         arr = new HighArray(maxSize); // create the array
         //   arr.insert(maxSize);
@@ -36,7 +36,7 @@ class HighArrayApp {
          arr.insert(00);
          arr.insert(66);
          arr.insert(33);*/
-           // display items
+        // display items
 
         /*   int searchKey = 35;           // search for item
          if( arr.find(searchKey) )
@@ -73,14 +73,32 @@ class HighArrayApp {
          arr.display();*/
         arr.insert(5);
         arr.insert(3);
+        arr.insert(17);
+          arr.insert(45);
+        arr.insert(80); 
+        arr.insert(80);
+         arr.insert(580);
+          arr.insert(570);
         arr.insert(2);
-        arr.instartlast(50);
+         arr.add(175);
+         System.out.println(arr.size());
+         arr.insert(58);
+         arr.insert(87);
+         
+       //   arr.insert(4870);
+     //   arr.insert(287);
+   //      System.out.println(arr.size());
+     //    arr.performanceInsertOrder(48);
+          arr.display();
+        arr.sortArray();
         arr.display();
-       arr.instartAt(2, 205);
-       arr.display();
-
+       
+     //   arr.instartlast(50);
+        // arr.display();
+        // arr.instartAt(2, 205);
+    
       //  arr.display();
-       // arr.display();
+        // arr.display();
         //    arr.display();
 //      arr.deleteAt(2);
         //    arr.display();

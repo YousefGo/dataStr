@@ -30,27 +30,34 @@ class LinkList
    public void insertFirst(int dd) // insert at start of list
       {                           // make new link
       Node newLink = new Node(dd);
-      newLink.next = first;       // newLink --> old first
+ 
+      newLink.setNext(first);    // newLink --> old first
       first = newLink;            // first --> newLink
+      
       }
   // -------------------------------------------------------------
    public void insertLast(int dd) // insert at start of list
       {                           // make new link
       Node newLink = new Node(dd);
       Node current = first;
-      while( current.next != null) {
-      current = current.next;
+      if (first==null)
+      {
+      first=newLink;
       }
-      current.next= newLink;
-   
+      else{
+      while( current.getNext() != null) {// 
+      current = current.getNext();
+      }
+      current.setNext(newLink);
+      }
    }// end insertLast
 // -------------------------------------------------------------
    public int deleteFirst()      // delete first item
       {                           // (assumes list not empty)
       Node temp = first;          // save reference to link
-      first = first.next;         // delete it: first-->old next
-      temp.next = null;
-      return temp.iData;          // return deleted link
+      first = first.getNext();         // delete it: first-->old next
+      temp.setNext(null);;
+      return temp.getIdate();          // return deleted link
       }
 // -------------------------------------------------------------
    public ListIterator getIterator()  // return iterator
@@ -64,19 +71,20 @@ class LinkList
       while(current != null)      // until end of list,
          {
          current.displayLink();   // print data
-         current = current.next;  // move to next link
+         current = current.getNext();  // move to next link
+            
          }
-      System.out.println("");
+   
       }
 // -------------------------------------------------------------
 
    public Node find(int key) {
    Node current = first;
    while ( current != null) {
-       if(current.iData == key) {
+       if(current.getIdate()== key) {
        return current;
        }//if
-       current= current.next;
+       current= current.getNext();
        
    }// while
    return null;
@@ -88,13 +96,13 @@ class LinkList
    Node current = first;
    
    while ( current != null) {
-       if(current.iData == key) {
-         prev.next = current.next;
-         current.next = null;
+       if(current.getIdate() == key) {
+         prev.setNext(current.getNext());
+         current.setNext(null);
          return current;
        }//if
        prev = current;
-       current = current.next;
+       current = current.getNext();
        
    }// while
    return null;
@@ -104,13 +112,31 @@ class LinkList
    Node current = first;
    Node prev = first;
    Node temp = null;
-   while(current.next != null ) {
-       prev = current;
-       current = current.next;
+   while(current.getNext() != null ) { // 1 2 4 
+       prev = current;        //1 //2
+       current = current.getNext();//2 //4
    }// end while
-   temp= current;
-   prev.next = null;
+   temp= current; //4
+   prev.setNext(null);  
    return temp;
    }// end deleteLast
 // -------------------------------------------------------------
+   public boolean findRec(Node s ,int n )
+           
+   {
+     if (s==null)  
+     {
+     return false ;
+     }
+       
+   if (s.getIdate()==n)
+   {
+   return true;
+   }
+
+   else {
+   return findRec(s.getNext(),n);
+   }
+   }
+   
    }  // end class LinkList

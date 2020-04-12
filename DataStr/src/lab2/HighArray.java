@@ -29,13 +29,14 @@ public class HighArray {
 
     //-----------------------------------------------------------
     public boolean find(long searchKey) {                              // find specified value
-        int j;
+        int j,count=0;
         for (j = 0; j < nElems; j++) // for each element,
         {
             if (a[j] == searchKey) // found item?
             {
                 break;                       // exit loop before end
             }
+            System.out.println(count++);
         }
         if (j == nElems) // gone to end?
         {
@@ -134,6 +135,10 @@ public class HighArray {
 
     public int size() {
         return nElems;
+    }
+    public int length ()
+    {
+    return a.length;
     }
 //
 
@@ -300,11 +305,13 @@ public class HighArray {
     }
 
     public void sortArray() {
-        for (int i = nElems - 1, j = nElems - 2; j >= 0; i--, j--) {
-            if (a[j] > a[i]) {
-                long temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+        for (int i = 0; i <= this.nElems; i++) {
+            for (int j = i + 1; j < this.nElems; j++) {
+                if (a[i] > a[j]) {
+                    long temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
             }
         }
     }
@@ -346,26 +353,34 @@ public class HighArray {
 
     public boolean EnsureCapcity() // To Know if capcity  size avalibe or not 
     {
-        return nElems + 1 <= a.length;
+        return nElems + 1 < a.length;
     }
 
     public void add(long x) {
         if (!EnsureCapcity()) {
-            int temp = a.length * 2;
+            int temp = a.length + 2;
 
-            long[] tempa = new long[temp];
+            long[] tempa = new long[a.length * 2];
             for (int i = 0; i < a.length; i++) {
                 tempa[i] = a[i];
             }
-            a = tempa;
+            this.a = new long[a.length * 2];
+          
+            for (int i = 0; i < a.length; i++) {
+                a[i] = tempa[i];}
+                nElems++;
+                a[nElems] = x;             // insert it
+                
+            
+        } else {
+            a[nElems] = x;             // insert it
+            nElems++;
         }
-        a[nElems] = x;             // insert it
-        nElems++;
     }
 
     public void insertFirst(long x) {
 
-      instartAt(0,x);
+        instartAt(0, x);
 
     }
 
@@ -375,11 +390,12 @@ public class HighArray {
         a[index] = x;
         nElems++;
     }
-        public void instartlast(long x) {
-         
-  int t =    nElems++;
+
+    public void instartlast(long x) {
+
+        int t = nElems++;
         a[t] = x;
-        
+
     }
 
     public long deleteFrist() {
@@ -388,10 +404,10 @@ public class HighArray {
         this.nElems--;
         return t;
     }
-    
-      public long deleteLast() {
-      return this.deleteAt(nElems-1);
-        
+
+    public long deleteLast() {
+        return this.deleteAt(nElems - 1);
+
     }
 
     public long deleteAt(int index) {
@@ -423,13 +439,22 @@ public class HighArray {
     public boolean isFull() {
         return this.nElems == a.length;
     }
-    public void setAt(int index , long value)
-    {
-    a[index]=value ;
+
+    public void setAt(int index, long value) {
+        a[index] = value;
     }
-    public long get(int index)
-    {
-    return a[index];
+
+    public long get(int index) {
+        return a[index];
+    }
+
+    public void performanceInsertOrder(long number) {
+        System.out.println("Big(O) is ");
+        double starttime = System.currentTimeMillis();
+        this.insertOrdered(number);
+        double endtime = System.currentTimeMillis();
+        System.out.println((endtime - starttime));
+
     }
 }  // end class HighArray
 

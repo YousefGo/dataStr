@@ -11,13 +11,31 @@ package lab5;
  */
 class Node
    {
-   public int iData;              // data item (key)
-   public Node next;              // next link in list
+   private  int iData;              // data item (key)
+   private  Node next;              // next link in list
 // -------------------------------------------------------------
    public Node(int id) // constructor
       {
       iData = id;
       }
+   // setter 
+   public void setNext(Node next)
+   {
+   this.next=next;
+   }
+   public void setIdate(int idate)
+   {
+   this.iData=idate;
+   }
+   //--------------getter
+   public Node getNext()
+   {
+   return next;
+   }
+   public int getIdate()
+   {
+   return this.iData;
+   }
 // -------------------------------------------------------------
    public void displayLink()      // display ourself
       {
