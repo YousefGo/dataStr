@@ -12,17 +12,19 @@ package lab5;
 public class testQueueLinkList {
     
     public static void main(String[] args) {
-        LinkList l = new LinkList ();
+       LinkList l = new LinkList ();
         QueueLinkList q = new QueueLinkList();
         for ( int i =10 ;i<=100;i=i+10)
         {
         q.Equeu(i);
         }
        for (int i=0;i<10;i++)
-       {
+       { 
+        
            System.out.println("i "+(i+1)+" \t"+q.Dequeu());
        }
-        
+      
+
     }
-    
+       
 }

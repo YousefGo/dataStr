@@ -28,5 +28,5 @@ public class StackLinkList extends LinkList {
     {
         super.displayList();
     }
-    
+
 }

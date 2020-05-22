@@ -84,14 +84,18 @@ class HighArrayApp {
          System.out.println(arr.size());
          arr.insert(58);
          arr.insert(87);
-         
+         arr.insert(16);
+         arr.insertf(1414);
+            arr.sortArray();
+         arr.display();
+     
+        System.out.println(arr.binarySearch(2));
        //   arr.insert(4870);
      //   arr.insert(287);
    //      System.out.println(arr.size());
      //    arr.performanceInsertOrder(48);
-          arr.display();
-        arr.sortArray();
-        arr.display();
+          
+     
        
      //   arr.instartlast(50);
         // arr.display();

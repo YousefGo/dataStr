@@ -454,8 +454,56 @@ public class HighArray {
         this.insertOrdered(number);
         double endtime = System.currentTimeMillis();
         System.out.println((endtime - starttime));
-
+  
     }
+        public void insertf(int s )
+      {
+      for (int l= this.nElems;l>0;l--)
+      {
+      this.a[l]=this.a[l--];
+      }
+      this.a[0]=s;
+      }
+        
+        //-------------------------------------------------
+        public void bubbleSort()
+        {
+        for (int i =0 ;i<this.nElems;i++)
+        {
+        for ( int j=i+1;j<this.nElems-1;j++)
+        {
+            if (this.a[i]<this.a[j])
+            {
+            long temp =a[i];
+           a[i]=a[j];
+           a[j]=temp;
+            
+            }
+        }
+        }
+        
+        }
+            void selecttionsort() 
+    { 
+       
+  
+        // One by one move boundary of unsorted subarray 
+        for (int i = 0; i <this.nElems; i++) 
+        { 
+            // Find the minimum element in unsorted array 
+            int min_idx = i; 
+            for (int j = i+1; j < nElems; j++) 
+                if (this.a[j] < a[min_idx]) 
+                    min_idx = j; 
+  
+            // Swap the found minimum element with the first 
+            // element 
+            long temp = a[min_idx]; 
+            a[min_idx] = a[i]; 
+            a[i] = temp; 
+        } 
+    }
+        
 }  // end class HighArray
 
 ////////////////////////////////////////////////////////////////

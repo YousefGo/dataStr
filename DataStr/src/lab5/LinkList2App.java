@@ -15,10 +15,10 @@ class LinkList2App
    public static void main(String[] args)
       {
       LinkList theList = new LinkList();  // make list
-       // theList.insertFirst(10);
+        theList.insertFirst(10);
         theList.insertLast(55);
-     // theList.displayList();              // display list
-
+     theList.displayList();              // display list
+          System.out.println(theList.length());
     Node f = theList.find(88);          // find item
       if( f != null)
          System.out.println("Found link with key " + f.getIdate());

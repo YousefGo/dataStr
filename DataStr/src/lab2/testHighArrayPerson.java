@@ -4,20 +4,22 @@
  * and open the template in the editor.
  */
 package lab2;
-
-public class testStringHighArray {
-
+import lab1.Person;
+/**
+ *
+ * @author Root
+ */
+public class testHighArrayPerson {
+    
     public static void main(String[] args) {
-        HighArrayString s = new HighArrayString();
-        s.insert("yousef");
-        s.insert("fahed");
-        s.insertFirst("waleed");
-        s.insertFirst("shaime");
-       s.insert("yousef");
-           s.insertFirst("shaifhffhme");
+        HighArrayPerson s = new HighArrayPerson();
+       Person i = new Person ("yosuef",13,180,"32");
+       s.insert(i);
+       s.insert(i);
       s.dispaly();
-    //    s.setStringAt(6, "ego");
+
           System.out.println(s.chackUniqe());     
     }
-
+    
+    
 }

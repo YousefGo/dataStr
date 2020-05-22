@@ -1,13 +1,24 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package lab2;
 
-public class HighArrayString {
+/**
+ *
+ * @author Root
+ */
 
-    private String[] array; // name of array 
+import lab1.Person;
+public class HighArrayPerson {
+
+    private Person[] array; // name of array 
     private int pointer;  // number of elemnts 
 
-    public HighArrayString() { // constrocrer
+    public HighArrayPerson() { // constrocrer
         pointer = 0;
-        array = new String[1];
+        array = new Person[1];
     }
 
     public boolean EnsureCapcity() { // methods to knew if array can add or not 
@@ -17,38 +28,38 @@ public class HighArrayString {
     public void SizeTracker() { // expand array 
         if (EnsureCapcity()) {
             int len = array.length * 2; // new size 
-            String temp[] = new String[len]; // copy elemnts of array 
+            Person temp[] = new Person[len]; // copy elemnts of array 
             for (int i = 0; i < array.length; i++) {  //  for to copy 
                 temp[i] = array[i]; // each elemts 
             }
-            array = new String[len]; // assinge new double size
+            array = new Person[len]; // assinge new double size
 
             array = temp; // reassing the address 
         }
 
     }
 
-    public void insert(String s) { // insert suquentail 
+    public void insert(Person s) { // insert suquentail 
         this.SizeTracker(); // to check of size 
         array[pointer] = s; // assing 
         pointer++; // incremtn number of elemnts 
     }
 
-    public void insertFirst(String value) { // insert frist in array 
+    public void insertFirst(Person value) { // insert frist in array 
         this.SizeTracker(); // size tracker r
         this.shiftRight(1); // shift right postion 
         array[0] = value;
         pointer++;
     }
 
-    public void insertLast(String value) {
+    public void insertLast(Person value) {
         this.SizeTracker();
         array[pointer] = value;///insert into last 
         this.pointer++;
     }
 
     // here there are may case , make idel code 
-    public void insertAt(int index, String value) {
+    public void insertAt(int index, Person value) {
         try {  // mabey there is sometings wrog so we use try 
             if (index <= 0) {// No Negtive index  ,so give try catch 
                 throw new IllegalArgumentException("No Zero or minues Argments");
@@ -81,7 +92,7 @@ public class HighArrayString {
         }
     }
 
-    public void setStringAt(int index, String s) {
+    public void setPersonAt(int index, Person s) {
         index = index - 1;
         try {
             if (!this.IsinRange(index)) {
@@ -94,7 +105,7 @@ public class HighArrayString {
 
     }
 
-    public String getString(int index) {
+    public Person getPerson(int index) {
         try {
             index--;
             if (!this.IsinRange(index)) {
@@ -170,5 +181,54 @@ public class HighArrayString {
         }
         return true;
     }
-    
+  public void bubbleSort()
+  {
+  for ( int i =0 ;i<this.pointer;i++)
+  {
+  for (int j =i+1;j<this.pointer-1;j++)
+  {
+      String name1=this.array[i].getName();
+            String name2=this.array[j].getName();
+  if(yousef_method(name2,name1))
+  {
+      Person temp=this.array[i];
+      this.array[i]=this.array[j];
+      this.array[j]=temp;
+      
+  }
+  }
+  }
+  
+  }
+      public boolean yousef_method(String a, String b)// this is my great mehtod i create is compare full string 
+    {
+        int len_a = a.length(); // to get leght of 1st prameter 
+        int len_b = b.length(); // to get lenght 2nd prameter 
+        int minlen = Math.min(len_a, len_b); // take the min casue you will test all char on it 
+        boolean res = false;
+        for (int i = 0; i < minlen; i++) {
+            if (a.charAt(i) < b.charAt(i)) {
+                res = true;
+                break;
+            } else if (a.charAt(i) == b.charAt(i)) {
+                continue;
+            } else {
+                res = false;
+                break;
+            }
+        }
+        return res;
+    }
+                void selecttionsort() 
+    { 
+       
+  
+        // One by one move boundary of unsorted subarray 
+        for (int i = 0; i <this.pointer; i++) 
+        { 
+       // not comptleterd yet mp; 
+        } 
+    }
+      
 }
+

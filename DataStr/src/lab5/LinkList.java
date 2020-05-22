@@ -10,10 +10,16 @@ package lab5;
  * @author Root
  */
 ////////////////////////////////////////////////////////////////
-class LinkList
+public class LinkList
    {
+    
    private Node first;            // ref to first item on list
+   
 // -------------// -------------------------------------------------------------
+   public LinkList(Node i)
+   {
+   first=i;
+   }
    public Node getFirst()         // get value of first
       { return first; }
 // -------------------------------------------------------------
@@ -138,5 +144,37 @@ class LinkList
    return findRec(s.getNext(),n);
    }
    }
+   public int length ()
+   {
+   int count =0 ;
+         Node current = first;       // start at beginning of list
+      while(current != null)      // until end of list,
+         {
+       count++;
+         current = current.getNext();  // move to next link
+            
+         }
+   return count;
+   }
+
    
+   public int indexOf(Object obj) {
+
+     int index = 0;
+ Node current = first;
+    while (current != null) {
+        if (current.equals( obj)) {
+            return index;
+        }
+
+        index++;
+        current = current.getNext();
+    }
+    if(index ==this.length() && obj == null){
+        return -1;
+    }
+    else{
+        return index;
+    }
+}
    }  // end class LinkList

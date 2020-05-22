@@ -62,14 +62,14 @@ class ListIterator
 
       if(previous == null)        // beginning of list
          {                        // (or empty list)
-         newLink.setNext(ourList.getFirst()); 
+         newLink.setNext(ourList.getFirst());  
          ourList.setFirst(newLink);
          reset();
          }
       else                        // not beginning
          {
-         newLink.setNext(previous.getNext()); 
-         previous.setNext(newLink); 
+         newLink.setNext( previous.getNext());
+         previous.setNext(newLink);
          current = newLink;
          }
       }
@@ -84,7 +84,7 @@ class ListIterator
          }
       else                        // not beginning
          {
-         previous.setNext(current.getNext());
+         previous.setNext(current.getNext());;
          if( atEnd() )
             reset();
          else

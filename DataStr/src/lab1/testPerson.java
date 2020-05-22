@@ -7,9 +7,9 @@ package lab1;
 
 
 public class testPerson {
-    public static void main(String[] args) {
-        Person p1 = new Person("ahmed",15,155.5);
-        Person p2 = new Person ("mohamm",18,170.2);
+    public static void main(MyString[] args) {
+        Person p1 = new Person("ahmed",15,155.5,"16");
+        Person p2 = new Person ("mohamm",18,170.2,"15");
         System.out.println(p1);
         System.out.println(p2);
         
